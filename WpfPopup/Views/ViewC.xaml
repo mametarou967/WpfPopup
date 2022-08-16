@@ -8,6 +8,7 @@
         <StackPanel>
             <Label Content="ViewC 画面" FontSize="30" Foreground="Blue"/>
             <TextBlock Text="{Binding ViewCTextBox}" />
+            <Button Content="OK" Command="{Binding OKButton}" />
 
         </StackPanel>
             

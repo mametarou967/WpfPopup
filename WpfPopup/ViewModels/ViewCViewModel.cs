@@ -13,7 +13,7 @@ namespace WpfPopup.ViewModels
     {
         public ViewCViewModel()
         {
-
+            OKButton = new DelegateCommand(OKButtonExecute);
         }
 
         private string _viewCTextBox = "XXX";
@@ -28,6 +28,8 @@ namespace WpfPopup.ViewModels
 
         public string Title => "ViewCのタイトル";
 
+        public DelegateCommand OKButton { get; }
+
         public bool CanCloseDialog()
         {
             return true;
@@ -39,6 +41,10 @@ namespace WpfPopup.ViewModels
 
         public void OnDialogOpened(IDialogParameters parameters)
         {
+        }
+        private void OKButtonExecute()
+        {
+            RequestClose.Invoke(new DialogResult(ButtonResult.OK));
         }
     }
 }
